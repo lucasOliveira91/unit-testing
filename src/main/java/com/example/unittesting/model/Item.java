@@ -5,7 +5,6 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 @Entity
-
 public class Item {
 
     @Id
@@ -16,6 +15,9 @@ public class Item {
 
     @Transient
     private int value;
+
+    public Item() {
+    }
 
     public Item(int id, String name, int price, int quantity) {
         this.id = id;
@@ -62,7 +64,7 @@ public class Item {
     }
 
     public int getValue() {
-        return value;
+        return this.price * this.quantity;
     }
 
     public void setValue(int value) {
